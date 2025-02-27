@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registered Students and Faculty - Empower Coaching Institute</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    h1 {
+      text-align: center;
+      color: #1e3c72;
+      margin-top: 20px;
+    }
+    .container {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      padding: 20px;
+    }
+    .table-container {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      width: 45%;
+      margin: 20px;
+    }
+    .table-container h2 {
+      text-align: center;
+      color: #1e3c72;
+      margin-bottom: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    table th, table td {
+      padding: 10px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+    table th {
+      background: #1e3c72;
+      color: white;
+    }
+    table tr:hover {
+      background: #f1f1f1;
+    }
+  </style>
+</head>
+<body>
+  <h1>Registered Students and Faculty</h1>
+  <div class="container">
+    <!-- Students Table -->
+    <div class="table-container">
+      <h2>Registered Students</h2>
+      <table id="students-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Course</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Student rows will be dynamically inserted here -->
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Faculty Table -->
+    <div class="table-container">
+      <h2>Registered Faculty</h2>
+      <table id="faculty-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Qualification</th>
+            <th>Experience</th>
+            <th>Subject</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Faculty rows will be dynamically inserted here -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script>
+    // Sample data (can be replaced with data from local storage or a backend)
+    const students = [
+      { name: "John Doe", email: "john@example.com", phone: "1234567890", course: "SSC Preparation" },
+      { name: "Jane Smith", email: "jane@example.com", phone: "9876543210", course: "CBSE Board" },
+    ];
+
+    const faculty = [
+      { name: "Dr. Alice Brown", email: "alice@example.com", phone: "1122334455", qualification: "PhD", experience: "10 years", subject: "Mathematics" },
+      { name: "Mr. Bob Green", email: "bob@example.com", phone: "5566778899", qualification: "M.Tech", experience: "8 years", subject: "Computer Science" },
+    ];
+
+    // Function to display students in the table
+    function displayStudents() {
+      const tbody = document.querySelector("#students-table tbody");
+      tbody.innerHTML = ""; // Clear existing rows
+      students.forEach(student => {
+        const row = `
+          <tr>
+            <td>${student.name}</td>
+            <td>${student.email}</td>
+            <td>${student.phone}</td>
+            <td>${student.course}</td>
+          </tr>
+        `;
+        tbody.innerHTML += row;
+      });
+    }
+
+    // Function to display faculty in the table
+    function displayFaculty() {
+      const tbody = document.querySelector("#faculty-table tbody");
+      tbody.innerHTML = ""; // Clear existing rows
+      faculty.forEach(facultyMember => {
+        const row = `
+          <tr>
+            <td>${facultyMember.name}</td>
+            <td>${facultyMember.email}</td>
+            <td>${facultyMember.phone}</td>
+            <td>${facultyMember.qualification}</td>
+            <td>${facultyMember.experience}</td>
+            <td>${facultyMember.subject}</td>
+          </tr>
+        `;
+        tbody.innerHTML += row;
+      });
+    }
+
+    // Display data on page load
+    displayStudents();
+    displayFaculty();
+  </script>
+</body>
+</html>

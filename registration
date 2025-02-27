@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Forms - Empower Coaching Institute</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    h1 {
+      text-align: center;
+      color: #1e3c72;
+      margin-top: 20px;
+    }
+    .form-container {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      padding: 20px;
+    }
+    .form {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      width: 400px;
+      margin: 20px;
+    }
+    .form h2 {
+      text-align: center;
+      color: #1e3c72;
+      margin-bottom: 20px;
+    }
+    .form label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+      color: #555;
+    }
+    .form input, .form select, .form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+    .form input[type="submit"] {
+      background: #1e3c72;
+      color: white;
+      font-size: 1rem;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .form input[type="submit"]:hover {
+      background: #2a5298;
+    }
+    .form textarea {
+      resize: vertical;
+      height: 100px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Registration Forms</h1>
+  <div class="form-container">
+    <!-- Student Registration Form -->
+    <div class="form">
+      <h2>Student Registration</h2>
+      <form action="studata" method="POST">
+        <label for="student-name">Full Name:</label>
+        <input type="text" id="student-name" name="student-name" required>
+
+        <label for="student-email">Email:</label>
+        <input type="email" id="student-email" name="student-email" required>
+
+        <label for="student-phone">Phone Number:</label>
+        <input type="tel" id="student-phone" name="student-phone" required>
+
+        <label for="student-course">Select Course:</label>
+        <select id="student-course" name="student-course" required>
+          <option value="">Choose a course</option>
+          <option value="SSC">SSC Preparation</option>
+          <option value="CBSE">CBSE Board</option>
+          <option value="Police">Police Exams</option>
+          <option value="Computer">Computer Courses</option>
+          <option value="Competitive">Competitive Exams</option>
+        </select>
+
+        <label for="student-message">Message (Optional):</label>
+        <textarea id="student-message" name="student-message"></textarea>
+
+        <input type="submit" value="Register as Student">
+      </form>
+    </div>
+
+    <!-- Faculty Registration Form -->
+    <div class="form">
+      <h2>Faculty Registration</h2>
+      <form action="#" method="POST">
+        <label for="faculty-name">Full Name:</label>
+        <input type="text" id="faculty-name" name="faculty-name" required>
+
+        <label for="faculty-email">Email:</label>
+        <input type="email" id="faculty-email" name="faculty-email" required>
+
+        <label for="faculty-phone">Phone Number:</label>
+        <input type="tel" id="faculty-phone" name="faculty-phone" required>
+
+        <label for="faculty-qualification">Qualification:</label>
+        <input type="text" id="faculty-qualification" name="faculty-qualification" required>
+
+        <label for="faculty-experience">Years of Experience:</label>
+        <input type="number" id="faculty-experience" name="faculty-experience" required>
+
+        <label for="faculty-subject">Subject Expertise:</label>
+        <input type="text" id="faculty-subject" name="faculty-subject" required>
+
+        <label for="faculty-message">Message (Optional):</label>
+        <textarea id="faculty-message" name="faculty-message"></textarea>
+
+        <input type="submit" value="Register as Faculty">
+      </form>
+    </div>
+  </div>
+</body>
+</html>
